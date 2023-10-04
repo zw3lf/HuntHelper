@@ -212,7 +212,7 @@ public unsafe class TeleportManager
         }
         catch (IpcNotReadyError)
         {
-            PluginLog.Error("Teleport IPC not found. Must have Teleporter Plugin installed to use this feature.");
+            // PluginLog.Error("Teleport IPC not found. Must have Teleporter Plugin installed to use this feature.");
             TeleportPluginNotFound = true;
         }
     }

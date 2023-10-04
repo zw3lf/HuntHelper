@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Dalamud.Plugin.Services;
 
 namespace HuntHelper.Gui.Resource;
 
@@ -41,7 +42,7 @@ public class GuiResources
                 dict[kvp.Key] = kvp.Value;
             }
 #if DEBUG
-            PluginLog.Debug(dict[kvp.Key]);
+            // PluginLog.Debug(dict[kvp.Key]);
 #endif
         }
     }
@@ -63,7 +64,7 @@ public class GuiResources
             var d = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(text);
             if (d == null)
             {
-                PluginLog.Error("failed to deserialise: " + $"{language}.json");
+                // PluginLog.Error("failed to deserialise: " + $"{language}.json");
                 return false;
             }
             foreach (var kvp in d)
@@ -87,15 +88,15 @@ public class GuiResources
                         break;
                 }
             }
-            PluginLog.Debug($"we gucci");
-            PluginLog.Log($"Loaded language file: {path}");
+            // PluginLog.Debug($"we gucci");
+            // PluginLog.Log($"Loaded language file: {path}");
             Language = language;
             return true;
         }
         catch (Exception e)
         {
-            PluginLog.Error(e.Message);
-            PluginLog.Error(e.StackTrace);
+            // PluginLog.Error(e.Message);
+            // PluginLog.Error(e.StackTrace);
         }
         return false;
     }

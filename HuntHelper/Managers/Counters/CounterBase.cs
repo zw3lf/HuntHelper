@@ -36,9 +36,9 @@ public abstract class CounterBase
     public void TryAddFromLogLine(string msg)
     {
 #if DEBUG
-        PluginLog.Error($"|{msg}|");
-        PluginLog.Error($"|{RegexPattern}|");
-        PluginLog.Error($"{Regex.IsMatch(msg, RegexPattern)}");
+        // PluginLog.Error($"|{msg}|");
+        // PluginLog.Error($"|{RegexPattern}|");
+        // PluginLog.Error($"{Regex.IsMatch(msg, RegexPattern)}");
 #endif
         if (Regex.IsMatch(msg, RegexPattern)) FindNameAndAdd(msg);
     }
